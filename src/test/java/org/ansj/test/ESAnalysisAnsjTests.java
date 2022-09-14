@@ -1,7 +1,9 @@
 package org.ansj.test;
 
+import org.ansj.dic.impl.Url2Stream;
 import org.junit.Test;
 
+import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
 public class ESAnalysisAnsjTests {
@@ -12,4 +14,9 @@ public class ESAnalysisAnsjTests {
 
     }
 
+    @Test
+    public void testHTTP() {
+        InputStream stream = Url2Stream.stream("http://localhost:8000/test.txt");
+        System.out.println(stream.toString());
+    }
 }
